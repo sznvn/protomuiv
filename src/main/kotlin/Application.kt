@@ -19,14 +19,14 @@ fun main() {
     val environment = applicationEngineEnvironment {
         log = LoggerFactory.getLogger("ktor.application")
         connector {
-            port = 8080
+            port = 18080
         }
         sslConnector(
             keyStore = keystore,
             keyAlias = "sampleAlias",
             keyStorePassword = { "foobar".toCharArray() },
             privateKeyPassword = { "foobar".toCharArray() }) {
-            port = 8443
+            port = 18443
             keyStorePath = keyStoreFile
         }
         module(Application::module)
